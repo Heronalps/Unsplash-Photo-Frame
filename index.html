@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Unsplash Photo Frame</title>
+    </head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <body>
+        <div class="container">
+            <form id="form">
+                <div class="form-group">
+                    <input type="number" id='width'>
+                </div>
+                <div class="form-group">
+                    <input type="number" id="height">
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-danger" type="submit" value="Get Image">
+                </div>
+            </form>
+            <div class="text-center">
+                <img id="img" class="rounded" />
+            </div>
+        </div>
+    </body>
+
+    <script>
+        var form = document.getElementById('form')
+
+        form.addEventListener('submit', function(e){
+            e.preventDefault()
+            var image = document.getElementById('img')
+            var width = document.getElementById('width').value
+            var height = document.getElementById('height').value
+            image.src = `https://source.unsplash.com/random/${width}x${height}`
+        })
+        var image = document.getElementById('img')
+        image.src = `https://source.unsplash.com/random/`
+    </script>
+</html>
