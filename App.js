@@ -1,10 +1,7 @@
-require("dotenv").config();
-
 var image = document.getElementById("img");
-const unsplashKey = process.env.UNSPLASHKEY;
 
 function fetchImage() {
-  fetch(`https://api.unsplash.com/photos/random?client_id=${unsplashKey}`)
+  fetch(`https://api.unsplash.com/photos/random?client_id=`)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
